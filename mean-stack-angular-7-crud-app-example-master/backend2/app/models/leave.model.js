@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
 
-const User = mongoose.model(
-  "User",
+const Leave = mongoose.model(
+  "Leave",
   new mongoose.Schema({
     username: String,
     email: String,
-    password: String,
     mobile: Number,
+    startdate: Date,
+    enddate: Date,
+
     roles: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -16,4 +18,4 @@ const User = mongoose.model(
   })
 );
 
-module.exports = User;
+module.exports = Leave;
