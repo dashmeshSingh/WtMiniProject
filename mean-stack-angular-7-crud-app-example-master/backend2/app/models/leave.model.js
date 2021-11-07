@@ -1,21 +1,29 @@
 const mongoose = require("mongoose");
+var autoIncrement = require('mongoose-auto-increment');
+ 
+autoIncrement.initialize(mongoose);
+
+var leaveschema = new mongoose.Schema({
+  username: String,
+  email: String,
+  mobile: Number,
+  startdate: Date,
+  enddate: Date,
+
+  roles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Role"
+    }
+  ]
+});
+
+leaveschema.plugin(autoIncrement.plugin, 'Leave');
+
 
 const Leave = mongoose.model(
-  "Leave",
-  new mongoose.Schema({
-    username: String,
-    email: String,
-    mobile: Number,
-    startdate: Date,
-    enddate: Date,
-
-    roles: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Role"
-      }
-    ]
-  })
+  "Leave",leaveschema
+  
 );
 
 module.exports = Leave;

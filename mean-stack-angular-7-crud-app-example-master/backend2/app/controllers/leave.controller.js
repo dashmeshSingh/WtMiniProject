@@ -5,6 +5,90 @@ const Role = db.role;
 const Leave = db.leave;
 
 
+exports.viewoneleave = (req, res) => {
+  const username = req.params.username;
+
+  Leave.findOne({
+    username: username
+    })
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Leave applications not found!!!" });
+      else res.send(data);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving leave application!!!"  });
+    });
+};
+
+exports.viewallLeave = (req, res) => {
+  const username = req.params.username;
+
+  Leave.find({
+    username: username
+    })
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Leave applications not found!!!" });
+      else res.send(data);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving leave application!!!"  });
+    });
+};
+
+exports.deleteLeave = (req, res) => {
+  const leaveid = req.params.leaveid;
+
+  Leave.findByIdAndRemove(leaveid)
+    .then(data => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot delete Leave application with id =${leaveid}. `
+        });
+      } else {
+        res.send({
+          message: "Leave application was deleted successfully!"
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Leave application with id =" + leaveid
+      });
+    });
+};
+
+exports.updateleave = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to be updated can not be empty!"
+    });
+  }
+
+  const leaveid = req.params.leaveid;
+
+  Leave.findByIdAndUpdate(leaveid, req.body, { useFindAndModify: false })
+    .then(data => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update leave application with id =${leaveid}.`
+        });
+      } else res.send({ message: "Leave application was updated successfully." });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({
+        message: "Error updating leave application with id=" + err
+      });
+    });
+};
+
+
 
 exports.leaveapply = (req, res) => {
   const leave = new Leave({
