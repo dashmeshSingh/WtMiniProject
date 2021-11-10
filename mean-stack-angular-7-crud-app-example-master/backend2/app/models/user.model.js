@@ -4,6 +4,8 @@ var autoIncrementuser = require('mongoose-auto-increment');
 autoIncrementuser.initialize(mongoose);
 
 var userschema = new mongoose.Schema({
+  firstname: String,
+  lastname: String,
   username: String,
   email: String,
   password: String,
