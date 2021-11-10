@@ -27,7 +27,8 @@ export class AuthService {
       username: user.username,
       email: user.email,
       password: user.password,
-      mobile: user.mobile
+      mobile: user.mobile,
+      roles:["user"]
     }, httpOptions);
   }
 }

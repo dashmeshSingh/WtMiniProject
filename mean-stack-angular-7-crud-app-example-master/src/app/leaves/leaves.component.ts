@@ -9,8 +9,8 @@ import {LeaveService} from '../_services/leave.service'
 })
 export class LeavesComponent implements OnInit {
     range = new FormGroup({
-    startdate: new FormControl(),
-    enddate: new FormControl(),
+    start: new FormControl(),
+    end: new FormControl(),
 
   });
   form: any = {};
@@ -24,9 +24,10 @@ export class LeavesComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.leaveService.Applyleave(this.form).subscribe(
+    this.leaveService.Applyleave(this.form,this.range).subscribe(
       data => {
         console.log(this.form);
+        console.log(this.range);
         console.log(data);
         this.isSuccessful = true;
         this.isApplyleaveFailed = false;

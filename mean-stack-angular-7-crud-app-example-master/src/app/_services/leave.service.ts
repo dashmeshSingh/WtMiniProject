@@ -14,13 +14,14 @@ export class LeaveService {
 
   constructor(private http: HttpClient) { }
 
-  Applyleave(leave): Observable<any> {
+  Applyleave(leave,range): Observable<any> {
     return this.http.post(AUTH_API + 'leave', {
       username: leave.username,
       email: leave.email,
       mobile: leave.mobile,
-      startdate: leave.startdate,
-      enddate: leave.enddate,
+      startdate: range.value.start,
+      enddate: range.value.end,
+      roles:["user"]
     }, httpOptions);
   }
 }
