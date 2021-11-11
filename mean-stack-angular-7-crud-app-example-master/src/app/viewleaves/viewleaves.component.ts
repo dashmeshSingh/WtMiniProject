@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ViewleavesService} from '../_services/viewleaves.service';
+import { LeaveService } from '../_services/leave.service';
+import { TokenStorageService } from '../_services/token-storage.service';
+
 
 @Component({
   selector: 'app-viewleaves',
@@ -11,11 +13,18 @@ export class ViewleavesComponent implements OnInit {
   leaves: any;
   currentleave = null;
   currentIndex = -1;
-  username = 'suppu';
+  username : string;
+  currentUser: any;
 
-  constructor(private leaveService: ViewleavesService) { }
+
+
+  constructor(
+    private token: TokenStorageService,
+    private leaveService: LeaveService) { }
 
   ngOnInit(): void {
+    this.currentUser = this.token.getUser();
+    this.username = this.currentUser.username;
     this.retrieveleaves();
   }
 
