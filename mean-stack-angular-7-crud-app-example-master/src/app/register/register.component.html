@@ -19,6 +19,45 @@
       #f="ngForm"
       novalidate
     >
+
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="firstname"
+        [(ngModel)]="form.firstname"
+        required
+        maxlength="30"
+        #firstname="ngModel"
+      />
+      </div>
+      <div class="alert-danger" *ngIf="f.submitted && firstname.invalid">
+        <div *ngIf="firstname.errors.required">firstname is required</div>
+        <div *ngIf="firstname.errors.maxlength">
+          firstname must be at most 30 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="lastname"
+          [(ngModel)]="form.lastname"
+          required
+          maxlength="30"
+          #lastname="ngModel"
+        />
+        </div>
+        <div class="alert-danger" *ngIf="f.submitted && lastname.invalid">
+          <div *ngIf="lastname.errors.required">lastname is required</div>
+          <div *ngIf="lastname.errors.maxlength">
+            lastname must be at most 30 characters
+          </div>
+        </div>
+
       <div class="form-group">
         <label for="username">Username</label>
         <input
@@ -30,7 +69,7 @@
           minlength="3"
           maxlength="20"
           #username="ngModel"
-        >
+        />
         <div class="alert-danger" *ngIf="f.submitted && username.invalid">
           <div *ngIf="username.errors.required">Username is required</div>
           <div *ngIf="username.errors.minlength">
