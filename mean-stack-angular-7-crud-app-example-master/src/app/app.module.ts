@@ -21,6 +21,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { ViewleavesComponent } from './viewleaves/viewleaves.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { MatInputModule } from '@angular/material/input';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    LeavesComponent
+    LeavesComponent,
+    ViewleavesComponent
   ],
   imports: [
     BrowserModule,
