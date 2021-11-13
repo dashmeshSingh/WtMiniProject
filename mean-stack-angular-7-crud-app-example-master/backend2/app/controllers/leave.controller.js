@@ -95,6 +95,7 @@ exports.leaveapply = (req, res) => {
     username: req.body.username,
     email: req.body.email,
     mobile: req.body.mobile,
+    leavetype: req.body.leavetype,
     startdate: req.body.startdate,
     enddate: req.body.enddate,
     status: false,

@@ -22,6 +22,7 @@ import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { ViewleavesComponent } from './viewleaves/viewleaves.component';
+import { UpdateleaveComponent } from './updateleave/updateleave.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ViewleavesComponent } from './viewleaves/viewleaves.component';
     BoardModeratorComponent,
     BoardUserComponent,
     LeavesComponent,
-    ViewleavesComponent
+    ViewleavesComponent,
+    UpdateleaveComponent
   ],
   imports: [
     BrowserModule,

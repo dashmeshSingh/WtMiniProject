@@ -10,6 +10,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { LeavesComponent } from './leaves/leaves.component';
 import { ViewleavesComponent } from './viewleaves/viewleaves.component';
+import { UpdateleaveComponent } from './updateleave/updateleave.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'leaves', component: LeavesComponent },
   { path: 'viewleaves', component: ViewleavesComponent },
+  { path: 'updateleaves', component: UpdateleaveComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

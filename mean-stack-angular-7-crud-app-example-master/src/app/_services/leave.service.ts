@@ -30,8 +30,12 @@ export class LeaveService {
     return this.http.get(AUTH_API + 'viewall/'+username, { responseType: 'text' });
   }
 
-  editleave(leaveid): Observable<any> {
-    return this.http.put(AUTH_API + 'update/'+leaveid, { responseType: 'text' });
+  getleave(id): Observable<any> {
+    return this.http.get(AUTH_API + 'viewall/'+id, { responseType: 'text' });
+  }
+
+  editleave(leaveid,data): Observable<any> {
+    return this.http.put(AUTH_API + 'update/'+leaveid,data, { responseType: 'text' });
   }
 
   deleteleave(leaveid): Observable<any> {
