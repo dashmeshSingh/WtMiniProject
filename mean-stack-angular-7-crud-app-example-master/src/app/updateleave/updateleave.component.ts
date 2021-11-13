@@ -9,7 +9,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
 })
 export class UpdateleaveComponent implements OnInit {
 
-leaves: any;
+ leaves: any=[];
  currentLeave = null;
  message = '';
  id : number;
@@ -37,6 +37,9 @@ leaves: any;
       data => {
         this.leaves = data;
         console.log(data);
+        // for(var val of data){
+        //   console.log(val);
+        // }
       },
       error => {
         console.log(error);

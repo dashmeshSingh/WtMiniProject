@@ -27,7 +27,7 @@ export class LeaveService {
   }
 
   getallleaves(username): Observable<any> {
-    return this.http.get(AUTH_API + 'viewall/'+username, { responseType: 'text' });
+    return this.http.get(AUTH_API + 'viewall/'+username, { responseType: 'json' });
   }
 
   getleave(id): Observable<any> {
