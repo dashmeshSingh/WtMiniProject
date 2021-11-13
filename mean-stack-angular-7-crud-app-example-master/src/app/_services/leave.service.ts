@@ -25,10 +25,16 @@ export class LeaveService {
       roles:["user"]
     }, httpOptions);
   }
-  
-  Viewoneleave(): Observable<any> {
-    return this.http.get(LEAVE_API + 'dhoni', { responseType: 'text' });
+
+  getallleaves(username): Observable<any> {
+    return this.http.get(AUTH_API + 'viewall/'+username, { responseType: 'text' });
   }
-  
-  
+
+  editleave(leaveid): Observable<any> {
+    return this.http.put(AUTH_API + 'update/'+leaveid, { responseType: 'text' });
+  }
+
+  deleteleave(leaveid): Observable<any> {
+    return this.http.delete(AUTH_API + 'delete/'+ leaveid, { responseType: 'text' });
+  }
 }
