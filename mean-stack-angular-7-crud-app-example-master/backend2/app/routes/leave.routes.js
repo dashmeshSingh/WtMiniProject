@@ -13,7 +13,7 @@ module.exports = function(app) {
 //   app.post("/api/auth/leaverequest", controller.leaveapply);
 
   app.post("/api/test/leave", controller.leaveapply);
-  app.get("/api/test/viewone/:username", controller.viewoneleave);
+  app.get("/api/test/viewone/:id", controller.viewoneleave);
   app.get("/api/test/viewall/:username", controller.viewallLeave);
   app.delete("/api/test/delete/:leaveid", controller.deleteLeave);
   app.put("/api/test/update/:leaveid", controller.updateleave);

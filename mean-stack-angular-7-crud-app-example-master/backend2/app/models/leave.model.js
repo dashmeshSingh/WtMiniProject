@@ -9,6 +9,7 @@ var leaveschema = new mongoose.Schema({
   mobile: Number,
   startdate: Date,
   enddate: Date,
+  status: Boolean,
 
   roles: [
     {

@@ -6,10 +6,10 @@ const Leave = db.leave;
 
 
 exports.viewoneleave = (req, res) => {
-  const username = req.params.username;
+  const id = req.params.id;
 
-  Leave.findOne({
-    username: username
+  Leave.findById({
+    _id: id
     })
     .then(data => {
       if (!data)
@@ -97,6 +97,7 @@ exports.leaveapply = (req, res) => {
     mobile: req.body.mobile,
     startdate: req.body.startdate,
     enddate: req.body.enddate,
+    status: false,
   });
 
   leave.save((err, leave) => {

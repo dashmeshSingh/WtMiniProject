@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 const AUTH_API = 'http://localhost:8080/api/test/';
+const LEAVE_API = 'http://localhost:8080/api/test/viewone';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -24,4 +25,10 @@ export class LeaveService {
       roles:["user"]
     }, httpOptions);
   }
+  
+  Viewoneleave(): Observable<any> {
+    return this.http.get(LEAVE_API + 'dhoni', { responseType: 'text' });
+  }
+  
+  
 }
