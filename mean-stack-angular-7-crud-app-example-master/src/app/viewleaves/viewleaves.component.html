@@ -6,9 +6,7 @@
         <thead>
           <th >Leave ID 
           </th>
-          <th >First Name 
-          </th>
-          <th >Last Name 
+          <th >Username
           </th>
           <th >Leave Type 
           </th>
@@ -22,16 +20,13 @@
         </thead>
         <tbody *ngIf="leaves">
           <tr *ngFor="let item of leaves">
-            <td>{{item.id}}</td>
+            <td>{{item._id}}</td>
             <!-- <td><a routerLink="/home/employees/details/{{leaverequest.employeeDTO.employeeId}}">
                 {{leaverequest.employeeDTO.firstName}} {{leaverequest.employeeDTO.middleName}}
                 {{leaverequest.employeeDTO.lastName}}
               </a></td> -->
             <td>
-                {{item.firstname}}
-            </td>
-            <td>
-                {{item.lastname}}
+                {{item.username}}
             </td>
             <td>
                 {{item.leavetype}}
@@ -42,13 +37,11 @@
             <td>
                 {{item.enddate}}
             </td>
-            <td>
-                {{item.status}}
-            </td>
+
             <!-- <td>{{leaverequest.leaveTypeDTO.typeName}}</td>
             <td>{{leaverequest.fromDate}}</td>
             <td>{{leaverequest.toDate}}</td> -->
-            <td [ngClass]="(item.status=='true')?'text-success':'text-danger'">{{ item.status ? "Approved" : "Pending" }}</td>
+            <td>{{ item.status ? "Approved" : "Pending" }}</td>
             <!-- <td><a routerLink="/home/leaverequests/details/{{leaverequest.leaveId}}">
                 <button mat-raised-button>View</button></a></td> -->
                 <td>

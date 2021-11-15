@@ -20,6 +20,7 @@ export class LeaveService {
       username: leave.username,
       email: leave.email,
       mobile: leave.mobile,
+      leavetype: leave.leavetype,
       startdate: range.value.start,
       enddate: range.value.end,
       roles:["user"]
