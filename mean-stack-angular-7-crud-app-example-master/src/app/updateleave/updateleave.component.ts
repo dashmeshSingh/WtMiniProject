@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { LeaveService } from '../_services/leave.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -8,7 +9,16 @@ import { TokenStorageService } from '../_services/token-storage.service';
   styleUrls: ['./updateleave.component.css']
 })
 export class UpdateleaveComponent implements OnInit {
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl(),
 
+  });
+  form: any = {};
+  isSuccessful = false;
+  isApplyleaveFailed = false;
+  errorMessage = '';
+  
  leaves: any=[];
  currentLeave = null;
  message = '';
@@ -22,6 +32,7 @@ export class UpdateleaveComponent implements OnInit {
    ) { }
 
  ngOnInit(): void {
+
    
    this.message = '';
    this.currentUser = this.token.getUser();
@@ -29,6 +40,22 @@ export class UpdateleaveComponent implements OnInit {
    this.username = this.currentUser.username;
    this.retrieveleaves();
  }
+
+ onSubmit(): void {
+  this.leaveService.Applyleave(this.form,this.range).subscribe(
+    data => {
+      console.log(this.form);
+      console.log(this.range);
+      console.log(data);
+      this.isSuccessful = true;
+      this.isApplyleaveFailed = false;
+    },
+    err => {
+      this.errorMessage = err.error.message;
+      this.isApplyleaveFailed = true;
+    }
+  );
+}
 
  retrieveleaves(): void {
   console.log(this.currentUser)

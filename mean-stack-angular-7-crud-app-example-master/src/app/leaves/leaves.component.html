@@ -74,6 +74,19 @@
         />
         </div>
 
+        <div class="form-group">
+          <label for="leavetype">Leave Type</label>
+          <input
+            type="text"
+            class="form-control"
+            name="leavetype"
+            [(ngModel)]="form.leavetype"
+            required
+            maxlength="40"
+            #leavetype="ngModel"
+          />
+          </div>
+
         <mat-form-field appearance="fill">
             <mat-label>Enter a date range</mat-label>
             <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
