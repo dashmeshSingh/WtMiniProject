@@ -12,6 +12,12 @@
       <li class="nav-item" *ngIf="showUserBoard">
         <a href="/leaves" class="nav-link" routerLink="leaves">Apply Leave</a>
       </li>
+      <li class="nav-item" *ngIf="showUserBoard">
+        <a href="/viewleaves" class="nav-link" routerLink="viewleaves">View Leave</a>
+      </li>
+      <li class="nav-item" *ngIf="showUserBoard">
+        <a href="/updateleaves" class="nav-link" routerLink="updateleaves">Update Leave</a>
+      </li>
       <li class="nav-item">
         <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
       </li>
