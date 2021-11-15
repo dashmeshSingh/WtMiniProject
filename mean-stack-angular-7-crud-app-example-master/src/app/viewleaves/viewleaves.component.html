@@ -1,1 +1,73 @@
-<p>viewleaves works!</p>
+<div class="row content-box">
+    <div class="col-md-12">
+  
+  
+      <table class="table table-hover">
+        <thead>
+          <th >Leave ID 
+          </th>
+          <th >First Name 
+          </th>
+          <th >Last Name 
+          </th>
+          <th >Leave Type 
+          </th>
+          <th >Start Date 
+          </th>
+          <th >End Date 
+          </th>
+          <th >Status 
+          </th>
+          <th>Action</th>
+        </thead>
+        <tbody *ngIf="leaves">
+          <tr *ngFor="let item of leaves">
+            <td>{{item.id}}</td>
+            <!-- <td><a routerLink="/home/employees/details/{{leaverequest.employeeDTO.employeeId}}">
+                {{leaverequest.employeeDTO.firstName}} {{leaverequest.employeeDTO.middleName}}
+                {{leaverequest.employeeDTO.lastName}}
+              </a></td> -->
+            <td>
+                {{item.firstname}}
+            </td>
+            <td>
+                {{item.lastname}}
+            </td>
+            <td>
+                {{item.leavetype}}
+            </td>
+            <td>
+                {{item.startdate}}
+            </td>
+            <td>
+                {{item.enddate}}
+            </td>
+            <td>
+                {{item.status}}
+            </td>
+            <!-- <td>{{leaverequest.leaveTypeDTO.typeName}}</td>
+            <td>{{leaverequest.fromDate}}</td>
+            <td>{{leaverequest.toDate}}</td> -->
+            <td [ngClass]="(item.status=='true')?'text-success':'text-danger'">{{ item.status ? "Approved" : "Pending" }}</td>
+            <!-- <td><a routerLink="/home/leaverequests/details/{{leaverequest.leaveId}}">
+                <button mat-raised-button>View</button></a></td> -->
+                <td>
+                    <button mat-raised-button>View</button>
+                </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- <div class="row col-md-12 mt-4">
+        <div class="col-md-auto">
+          <span *ngIf="leaveRequests" class="table-details">Showing {{(currentPage-1) * size +1}} to {{(currentPage-1) *
+            size
+            + numberOfElements }} of {{totalElements}}</span>
+        </div>
+        <div class="col">
+          <pagination-controls class="float-right" (pageChange)="getPage($event)"></pagination-controls>
+        </div>
+      </div> -->
+  
+    </div>
+  </div>
