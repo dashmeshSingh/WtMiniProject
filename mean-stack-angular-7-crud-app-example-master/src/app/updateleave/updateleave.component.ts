@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LeaveService } from '../_services/leave.service';
 import { TokenStorageService } from '../_services/token-storage.service';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-updateleave',
@@ -22,13 +23,15 @@ export class UpdateleaveComponent implements OnInit {
  leaves: any=[];
  currentLeave = null;
  message = '';
- id : number;
+//  id : number;
  currentUser: any;
  username : string;
+ authority : {id:number};
 
  constructor(
   private token: TokenStorageService,
    private leaveService: LeaveService,
+   private location: Location,
    ) { }
 
  ngOnInit(): void {
@@ -36,9 +39,11 @@ export class UpdateleaveComponent implements OnInit {
    
    this.message = '';
    this.currentUser = this.token.getUser();
-   this.id = this.currentUser.id;
+  //  this.id = this.currentUser.id;
    this.username = this.currentUser.username;
    this.retrieveleaves();
+  //  this.authority = this.location.getState();
+  console.log(history.state)
  }
 
  onSubmit(): void {

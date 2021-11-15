@@ -45,7 +45,9 @@
             <!-- <td><a routerLink="/home/leaverequests/details/{{leaverequest.leaveId}}">
                 <button mat-raised-button>View</button></a></td> -->
                 <td>
-                    <button mat-raised-button>View</button>
+                   <a routerLink= "/updateleaves" [state]= "{id: item._id}"> <button mat-raised-button>Update</button></a> 
+                    
+                    <button mat-raised-button>Delete</button>
                 </td>
           </tr>
         </tbody>
