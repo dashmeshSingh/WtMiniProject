@@ -8,7 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { LeavesComponent } from './leaves/leaves.component';
+import { ApplyleaveComponent } from './applyleave/applyleave.component'
 import { ViewleavesComponent } from './viewleaves/viewleaves.component';
 import { UpdateleaveComponent } from './updateleave/updateleave.component';
 
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: 'leaves', component: LeavesComponent },
+  { path: 'applyleaves', component: ApplyleaveComponent },
   { path: 'viewleaves', component: ViewleavesComponent },
   { path: 'updateleaves', component: UpdateleaveComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }

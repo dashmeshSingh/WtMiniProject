@@ -18,8 +18,6 @@ export class LeaveService {
   Applyleave(leave,range): Observable<any> {
     return this.http.post(AUTH_API + 'leave', {
       username: leave.username,
-      email: leave.email,
-      mobile: leave.mobile,
       leavetype: leave.leavetype,
       startdate: range.value.start,
       enddate: range.value.end,

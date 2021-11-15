@@ -5,8 +5,6 @@ autoIncrement.initialize(mongoose);
 
 var leaveschema = new mongoose.Schema({
   username: String,
-  email: String,
-  mobile: Number,
   leavetype: String,
   startdate: Date,
   enddate: Date,

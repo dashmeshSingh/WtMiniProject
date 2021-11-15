@@ -15,7 +15,6 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { LeavesComponent } from './leaves/leaves.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
@@ -23,6 +22,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { ViewleavesComponent } from './viewleaves/viewleaves.component';
 import { UpdateleaveComponent } from './updateleave/updateleave.component';
+import { ApplyleaveComponent } from './applyleave/applyleave.component';
 
 
 @NgModule({
@@ -35,9 +35,9 @@ import { UpdateleaveComponent } from './updateleave/updateleave.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    LeavesComponent,
     ViewleavesComponent,
-    UpdateleaveComponent
+    UpdateleaveComponent,
+    ApplyleaveComponent
   ],
   imports: [
     BrowserModule,
