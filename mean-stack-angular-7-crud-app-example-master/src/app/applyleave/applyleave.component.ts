@@ -3,11 +3,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 import {LeaveService} from '../_services/leave.service'
 
 @Component({
-  selector: 'app-leaves',
-  templateUrl: './leaves.component.html',
-  styleUrls: ['./leaves.component.css']
+  selector: 'app-applyleave',
+  templateUrl: './applyleave.component.html',
+  styleUrls: ['./applyleave.component.css']
 })
-export class LeavesComponent implements OnInit {
+export class ApplyleaveComponent implements OnInit {
     range = new FormGroup({
     start: new FormControl(),
     end: new FormControl(),

@@ -72,7 +72,15 @@ exports.updateleave = (req, res) => {
 
   const leaveid = req.params.leaveid;
 
-  Leave.findByIdAndUpdate(leaveid, req.body, { useFindAndModify: false })
+  Leave.findByIdAndUpdate(leaveid, {
+    username: req.body.username,
+    leavetype: req.body.leavetype,
+    startdate: req.body.startdate,
+    enddate: req.body.enddate,
+    status: false,
+  
+    roles: req.body.roles,
+  }, { useFindAndModify: false })
     .then(data => {
       if (!data) {
         res.status(404).send({
@@ -93,8 +101,6 @@ exports.updateleave = (req, res) => {
 exports.leaveapply = (req, res) => {
   const leave = new Leave({
     username: req.body.username,
-    email: req.body.email,
-    mobile: req.body.mobile,
     leavetype: req.body.leavetype,
     startdate: req.body.startdate,
     enddate: req.body.enddate,
