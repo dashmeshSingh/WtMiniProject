@@ -69,7 +69,6 @@ export class UpdateleaveComponent implements OnInit {
   }
 
   retrieveleaves(): void {
-    // console.log(this.currentUser)
     this.leaveService.getleave(this.id)
       .subscribe(
         data => {

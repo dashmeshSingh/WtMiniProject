@@ -21,10 +21,7 @@
         <tbody *ngIf="leaves">
           <tr *ngFor="let item of leaves">
             <td>{{item._id}}</td>
-            <!-- <td><a routerLink="/home/employees/details/{{leaverequest.employeeDTO.employeeId}}">
-                {{leaverequest.employeeDTO.firstName}} {{leaverequest.employeeDTO.middleName}}
-                {{leaverequest.employeeDTO.lastName}}
-              </a></td> -->
+            
             <td>
                 {{item.username}}
             </td>
@@ -38,12 +35,9 @@
                 {{item.enddate.slice(0,10)}}
             </td>
 
-            <!-- <td>{{leaverequest.leaveTypeDTO.typeName}}</td>
-            <td>{{leaverequest.fromDate}}</td>
-            <td>{{leaverequest.toDate}}</td> -->
+            
             <td>{{ item.status ? "Approved" : "Pending" }}</td>
-            <!-- <td><a routerLink="/home/leaverequests/details/{{leaverequest.leaveId}}">
-                <button mat-raised-button>View</button></a></td> -->
+           
                 <td>
                    <a routerLink= "/updateleaves" [state]= "{id: item._id}"> <button mat-raised-button>Update</button></a> 
                     
@@ -53,16 +47,7 @@
         </tbody>
       </table>
   
-      <!-- <div class="row col-md-12 mt-4">
-        <div class="col-md-auto">
-          <span *ngIf="leaveRequests" class="table-details">Showing {{(currentPage-1) * size +1}} to {{(currentPage-1) *
-            size
-            + numberOfElements }} of {{totalElements}}</span>
-        </div>
-        <div class="col">
-          <pagination-controls class="float-right" (pageChange)="getPage($event)"></pagination-controls>
-        </div>
-      </div> -->
+     
   
     </div>
   </div>
