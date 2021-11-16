@@ -49,19 +49,7 @@ export class UpdateleaveComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // this.leaveService.editleave(this.form, this.range).subscribe(
-    //   data => {
-    //     console.log(this.form);
-    //     console.log(this.range);
-    //     console.log(data);
-    //     this.isSuccessful = true;
-    //     this.isUpdateleaveFailed = false;
-    //   },
-    //   err => {
-    //     this.errorMessage = err.error.message;
-    //     this.isUpdateleaveFailed = true;
-    //   }
-    // );
+    
     {
       this.leaveService.editleave(this.id, this.form, this.range, this.leaves.roles)
         .subscribe(
@@ -88,12 +76,10 @@ export class UpdateleaveComponent implements OnInit {
           this.leaves = data;
           console.log(this.id);
           console.log(data);
-          // for(var val of data){
-            // console.log(val);
-          // }
+          
         },
         error => {
-          // console.log(error);
+          console.log(error);
         });
   }
 
@@ -113,15 +99,6 @@ export class UpdateleaveComponent implements OnInit {
       roles: this.leaves.roles
     };
 
-  //   this.leaveService.editleave(this.leaves.id, data)
-  //     .subscribe(
-  //       response => {
-  //         this.leaves.status = status;
-  //         // console.log(response);
-  //       },
-  //       error => {
-  //         // console.log(error);
-  //       });
   }
 
   updateLeave(): void {
