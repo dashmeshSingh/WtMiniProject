@@ -33,6 +33,7 @@ export class ViewleavesComponent implements OnInit {
       .subscribe(
         data => {
           this.leaves = data;
+          console.log(this.username);
           console.log(data);
         },
         error => {
