@@ -17,39 +17,26 @@ margin-bottom: auto;
 }
 
 .card{
-height: 400px;
-right: 120px;
+height: 300px;
+left: 10px;
 top: 2px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
-}
-
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
-}
-
-.social_icon span:hover{
-color: white;
-cursor: pointer;
+background-color: rgba(247, 196, 58, 1) !important;
 }
 
 .card-header h3{
 color: white;
-}
-
-.social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
+font-size: 30px;
+color: black;
+font-family: 'Numans', sans-serif;
+text-align: center;
 }
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color: #999796;
 color: black;
 border:0 !important;
 }
