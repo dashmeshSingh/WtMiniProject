@@ -1,5 +1,57 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
-</div>
+<html>
+  <head>
+    <title>Register Page</title>
+    <link rel="stylesheet" type="text/css" href="board-admin.component.css">
+    </head>
+<body>
+
+<div class="row content-box table">
+    <div class="col-md-12">
+  
+  
+      <table class="table table-hover">
+        <thead>
+          <th >Employee ID 
+          </th>
+          <th >First name
+          </th>
+          <th >Last name
+          </th>
+          <th >Username
+          </th>
+          <th >Email 
+          </th>
+          
+          <th >Mobile 
+          </th>
+          
+        </thead>
+        <tbody *ngIf="content">
+          <tr *ngFor="let item of content">
+            <td>{{item._id}}</td>
+            <td>
+              {{item.firstname}}
+            </td>
+            <td>
+              {{item.lastname}}
+            </td>
+            <td>
+                {{item.username}}
+            </td>
+            <td>
+                {{item.email}}
+            </td>
+            <td>
+                {{item.mobile}}
+            </td>
+           
+          </tr>
+        </tbody>
+      </table>
+  
+     
+  
+    </div>
+  </div>
+</body>
+  </html>

@@ -16,11 +16,8 @@ exports.adminBoard = (req, res) => {
 };
 
 exports.viewallUsers = (req, res) => {
-  const username = req.params.username;
- 
-  User.find({
-    username: username
-    })
+  
+  User.find()
     .then(data => {
       if (!data)
         res.status(404).send({ message: "User not found!!!" });

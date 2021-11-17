@@ -65,6 +65,7 @@ exports.signup = (req, res) => {
   });
 };
 
+
 exports.signin = (req, res) => {
   User.findOne({
     username: req.body.username
@@ -99,6 +100,7 @@ exports.signin = (req, res) => {
       var authorities = [];
 
       for (let i = 0; i < user.roles.length; i++) {
+        console.log(user.roles[i])
         authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
       }
       res.status(200).send({

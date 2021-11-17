@@ -10,7 +10,7 @@ import { UserService } from '../_services/user.service';
 })
 export class BoardAdminComponent implements OnInit {
 
-  content: string;
+  content:any;
   currentToken: any;
   currentUser: any;
   username: string;
@@ -22,16 +22,12 @@ export class BoardAdminComponent implements OnInit {
   
     this.currentUser = this.tokenStorageService.getUser();
     this.username = this.currentUser.username;
-    console.log(this.currentUser);
-    const params = new HttpParams()
-   .set('username', this.username)
+ 
   
-
-    // const header =  { headers: {'x-access-token': this.currentToken} };
-    this.userService.getAdminBoard(this.currentToken,this.username).subscribe(
+    this.userService.getAdminBoard(this.currentToken).subscribe(
       data => {
         this.content = data;
-        console.log(data);
+        console.log(this.content);
       },
       err => {
         this.content = JSON.parse(err.error).message;
