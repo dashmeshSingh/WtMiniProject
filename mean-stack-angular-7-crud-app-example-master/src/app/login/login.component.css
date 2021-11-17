@@ -23,7 +23,7 @@ top: 2px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
-background-color: rgba(247, 196, 58, 1) !important;
+background-color:#E6E6FA !important;
 }
 
 .card-header h3{
@@ -61,7 +61,7 @@ margin-right: 5px;
 
 .login_btn{
 color: black;
-background-color: #FFC312;
+background-color: #E6E6FA;
 width: 100px;
 }
 
