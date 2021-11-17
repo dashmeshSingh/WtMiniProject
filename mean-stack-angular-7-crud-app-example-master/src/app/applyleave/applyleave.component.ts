@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {LeaveService} from '../_services/leave.service'
+import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
   selector: 'app-applyleave',
@@ -17,10 +18,17 @@ export class ApplyleaveComponent implements OnInit {
   isSuccessful = false;
   isApplyleaveFailed = false;
   errorMessage = '';
-
-  constructor(private leaveService: LeaveService) { }
+  currentUser: any;
+  username: string;
+  constructor(private leaveService: LeaveService,
+    private token: TokenStorageService,
+    ) { }
 
   ngOnInit(): void {
+    this.currentUser = this.token.getUser();
+    //  this.id = this.currentUser.id;
+    this.username = this.currentUser.username;
+    console.log(this.currentUser)
   }
 
   onSubmit(): void {

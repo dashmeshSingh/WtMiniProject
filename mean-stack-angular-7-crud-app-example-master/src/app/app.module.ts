@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ViewleavesComponent } from './viewleaves/viewleaves.component';
 import { UpdateleaveComponent } from './updateleave/updateleave.component';
 import { ApplyleaveComponent } from './applyleave/applyleave.component';
+import { DeleteleaveComponent } from './deleteleave/deleteleave.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ApplyleaveComponent } from './applyleave/applyleave.component';
     BoardUserComponent,
     ViewleavesComponent,
     UpdateleaveComponent,
-    ApplyleaveComponent
+    ApplyleaveComponent,
+    DeleteleaveComponent
   ],
   imports: [
     BrowserModule,

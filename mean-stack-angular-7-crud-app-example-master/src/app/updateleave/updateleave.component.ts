@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LeaveService } from '../_services/leave.service';
 import { TokenStorageService } from '../_services/token-storage.service';
-import {Location} from "@angular/common";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-updateleave',
@@ -17,105 +17,99 @@ export class UpdateleaveComponent implements OnInit {
   });
   form: any = {};
   isSuccessful = false;
-  isApplyleaveFailed = false;
+  isUpdateleaveFailed = false;
   errorMessage = '';
-  
- leaves: any=[];
- currentLeave = null;
- message = '';
-//  id : number;
- currentUser: any;
- username : string;
- authority : {id:number};
 
- constructor(
-  private token: TokenStorageService,
-   private leaveService: LeaveService,
-   private location: Location,
-   ) { }
+  leaves: any = [];
+  currentLeave = null;
+  message = '';
+  id: number;
+  currentUser: any;
+  username: string;
+  //  authority : {id:number};
 
- ngOnInit(): void {
+  constructor(
+    private token: TokenStorageService,
+    private leaveService: LeaveService,
+    private location: Location,
+  ) { }
 
-   
-   this.message = '';
-   this.currentUser = this.token.getUser();
-  //  this.id = this.currentUser.id;
-   this.username = this.currentUser.username;
-   this.retrieveleaves();
-  //  this.authority = this.location.getState();
-  console.log(history.state)
- }
+  ngOnInit(): void {
 
- onSubmit(): void {
-  this.leaveService.Applyleave(this.form,this.range).subscribe(
-    data => {
-      console.log(this.form);
-      console.log(this.range);
-      console.log(data);
-      this.isSuccessful = true;
-      this.isApplyleaveFailed = false;
-    },
-    err => {
-      this.errorMessage = err.error.message;
-      this.isApplyleaveFailed = true;
+
+    this.message = '';
+    this.currentUser = this.token.getUser();
+    //  this.id = this.currentUser.id;
+    this.username = this.currentUser.username;
+    
+    //  this.authority = this.location.getState();
+    this.id = history.state.id;
+    this.retrieveleaves();
+    // console.log(this.id,history.state);
+  }
+
+  onSubmit(): void {
+    
+    {
+      this.leaveService.editleave(this.id, this.form, this.range, this.leaves.roles)
+        .subscribe(
+          response => {
+            console.log(this.id, this.form, this.range, this.leaves.roles);
+            console.log(response);
+            this.message = 'The Leave was updated successfully!';
+            this.isSuccessful = true;
+                this.isUpdateleaveFailed = false;
+              },
+              err => {
+                this.errorMessage = err.error.message;
+                this.isUpdateleaveFailed = true;
+              }
+            );
     }
-  );
-}
+  }
 
- retrieveleaves(): void {
-  console.log(this.currentUser)
-  this.leaveService.getallleaves(this.username)
-    .subscribe(
-      data => {
-        this.leaves = data;
-        console.log(data);
-        // for(var val of data){
-        //   console.log(val);
-        // }
-      },
-      error => {
-        console.log(error);
-      });
-}
-
-getusername(){
-  return this.currentUser.username;
-}
-
- 
-  
-  updateStatus(status): void {
-    const data = {
-      username: this.leaves.username,
-      email: this.leaves.email,
-      mobile: this.leaves.mobile,
-      leavetype: this.leaves.leavetype,
-      startdate: this.leaves.startdate,
-      enddate: this.leaves.endate,
-      status:this.leaves.status,
-      roles: this.leaves.roles
-    };
-
-    this.leaveService.editleave(this.leaves.id, data)
+  retrieveleaves(): void {
+    this.leaveService.getleave(this.id)
       .subscribe(
-        response => {
-          this.leaves.status = status;
-          console.log(response);
+        data => {
+          this.leaves = data;
+          console.log(this.id);
+          console.log(data);
+          
         },
         error => {
           console.log(error);
         });
   }
 
+  getusername() {
+    return this.currentUser.username;
+  }
+
+
+
+  updateStatus(status): void {
+    const data = {
+      username: this.leaves.username,
+      leavetype: this.leaves.leavetype,
+      startdate: this.leaves.startdate,
+      enddate: this.leaves.endate,
+      status: this.leaves.status,
+      roles: this.leaves.roles
+    };
+
+  }
+
   updateLeave(): void {
-    this.leaveService.editleave(this.leaves.id, this.leaves)
+    this.leaveService.editleave(this.id, this.form, this.range, this.leaves.roles)
       .subscribe(
         response => {
+          console.log(this.id, this.form, this.range, this.leaves.roles);
           console.log(response);
           this.message = 'The Leave was updated successfully!';
         },
         error => {
-          console.log(error);
+          // console.log(error);
         });
   }
 

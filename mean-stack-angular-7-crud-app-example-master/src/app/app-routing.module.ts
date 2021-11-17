@@ -11,6 +11,7 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { ApplyleaveComponent } from './applyleave/applyleave.component'
 import { ViewleavesComponent } from './viewleaves/viewleaves.component';
 import { UpdateleaveComponent } from './updateleave/updateleave.component';
+import { DeleteleaveComponent } from './deleteleave/deleteleave.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'applyleaves', component: ApplyleaveComponent },
   { path: 'viewleaves', component: ViewleavesComponent },
   { path: 'updateleaves', component: UpdateleaveComponent },
+  { path: 'deleteleaves', component: DeleteleaveComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

@@ -30,14 +30,25 @@ export class LeaveService {
   }
 
   getleave(id): Observable<any> {
-    return this.http.get(AUTH_API + 'viewall/'+id, { responseType: 'text' });
+    console.log(id);
+    return this.http.get(AUTH_API + 'viewone/'+id, { responseType: 'json' });
   }
 
-  editleave(leaveid,data): Observable<any> {
-    return this.http.put(AUTH_API + 'update/'+leaveid,data, { responseType: 'text' });
+  editleave(leaveid,leave,range,roles): Observable<any> {
+    return this.http.put(AUTH_API + 'update/'+leaveid, {
+      username: leave.username,
+      leavetype: leave.leavetype,
+      startdate: range.value.start,
+      enddate: range.value.end,
+      roles: roles,
+    }, { responseType: 'json' });
   }
 
   deleteleave(leaveid): Observable<any> {
-    return this.http.delete(AUTH_API + 'delete/'+ leaveid, { responseType: 'text' });
+    return this.http.delete(AUTH_API + 'delete/'+ leaveid, { responseType: 'json' });
   }
 }
+function _id(_id: any) {
+  throw new Error('Function not implemented.');
+}
+
