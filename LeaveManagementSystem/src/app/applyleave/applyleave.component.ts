@@ -28,9 +28,10 @@ export class ApplyleaveComponent implements OnInit {
     this.currentUser = this.token.getUser();
     //  this.id = this.currentUser.id;
     this.username = this.currentUser.username;
-    console.log(this.currentUser)
+    console.log(this.currentUser);
+    this.form.username = this.username;
   }
-
+  
   onSubmit(): void {
     this.leaveService.Applyleave(this.form,this.range).subscribe(
       data => {
