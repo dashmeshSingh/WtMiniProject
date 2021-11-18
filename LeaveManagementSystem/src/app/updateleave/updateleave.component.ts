@@ -50,7 +50,7 @@ export class UpdateleaveComponent implements OnInit {
 
   onSubmit(): void {
     
-    {
+    
       this.leaveService.editleave(this.id, this.form, this.range, this.leaves.roles)
         .subscribe(
           response => {
@@ -65,7 +65,7 @@ export class UpdateleaveComponent implements OnInit {
                 this.isUpdateleaveFailed = true;
               }
             );
-    }
+    
   }
 
   retrieveleaves(): void {

@@ -1,3 +1,4 @@
+const { authJwt } = require("../middlewares");
 const { verifySignUp } = require("../middlewares");
 const controller = require("../controllers/auth.controller");
 
@@ -19,5 +20,6 @@ module.exports = function(app) {
     controller.signup
   );
   app.post("/api/auth/signin", controller.signin);
+  app.get("/api/auth/adminviewleaves",[authJwt.verifyToken, authJwt.isAdmin],controller.adminviewleaves);
 };
 

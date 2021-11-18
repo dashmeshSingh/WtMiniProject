@@ -2,9 +2,26 @@ const config = require("../config/auth.config");
 const db = require("../models");
 const User = db.user;
 const Role = db.role;
+const Leave = db.leave;
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
+
+exports.adminviewleaves = (req, res) => {
+
+
+  Leave.find()
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Leave applications not found!!!" });
+      else res.send(data);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving leave application!!!"  });
+    });
+};
 
 exports.signup = (req, res) => {
   const user = new User({

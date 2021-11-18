@@ -7,9 +7,13 @@
       <!-- <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
       </li> -->
-      <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+      <li class="nav-item" *ngIf="showUsers">
+        <a href="/viewusers" class="nav-link" routerLink="viewusers">View Users</a>
       </li>
+      <li class="nav-item" *ngIf="showUsers">
+        <a href="/adminviewleaves" class="nav-link" routerLink="adminviewleaves">View Leaves</a>
+      </li>
+      
       <li class="nav-item" *ngIf="showUserBoard">
         <a href="/applyleaves" class="nav-link" routerLink="applyleaves">Apply Leave</a>
       </li>

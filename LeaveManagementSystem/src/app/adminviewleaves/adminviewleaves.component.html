@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>View User Leaves Page</title>
+    <link rel="stylesheet" type="text/css" href="adminviewleaves.component.css">
+</head>
+
+<body>
+
+    <div class="row content-box table">
+        <div class="col-md-12">
+
+
+            <table class="table table-hover">
+                <thead>
+                    <th>Leave ID
+                    </th>
+
+                    <th>Username
+                    </th>
+                    <th>Leave Type
+                    </th>
+                    <th>Start Date
+                    </th>
+                    <th>End Date
+                    </th>
+
+                    <th>Status
+                    </th>
+                    <th>Action
+                    </th>
+
+                </thead>
+                <tbody *ngIf="leaves">
+                    <tr *ngFor="let item of leaves">
+                        <td>{{item._id}}</td>
+                        <td>
+                            {{item.username}}
+                        </td>
+                        <td>
+                            {{item.leavetype}}
+                        </td>
+                        <td>
+                            {{item.startdate.slice(0,10)}}
+                        </td>
+                        <td>
+                            {{item.enddate.slice(0,10)}}
+                        </td>
+
+
+                        <td>{{ item.status ? "Approved" : "Pending" }}</td>
+
+                        <td>
+                            <button mat-raised-button (click) = "updateStatus(true,item._id)">Approve</button>
+                            <button mat-raised-button (click) = "updateStatus(false,item._id)">Deny</button>
+                        </td>
+
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

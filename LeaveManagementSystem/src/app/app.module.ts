@@ -11,7 +11,6 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
@@ -24,6 +23,7 @@ import { ViewleavesComponent } from './viewleaves/viewleaves.component';
 import { UpdateleaveComponent } from './updateleave/updateleave.component';
 import { ApplyleaveComponent } from './applyleave/applyleave.component';
 import { DeleteleaveComponent } from './deleteleave/deleteleave.component';
+import { AdminviewleavesComponent } from './adminviewleaves/adminviewleaves.component';
 
 
 @NgModule({
@@ -34,12 +34,12 @@ import { DeleteleaveComponent } from './deleteleave/deleteleave.component';
     HomeComponent,
     ProfileComponent,
     BoardAdminComponent,
-    BoardModeratorComponent,
     BoardUserComponent,
     ViewleavesComponent,
     UpdateleaveComponent,
     ApplyleaveComponent,
-    DeleteleaveComponent
+    DeleteleaveComponent,
+    AdminviewleavesComponent
   ],
   imports: [
     BrowserModule,

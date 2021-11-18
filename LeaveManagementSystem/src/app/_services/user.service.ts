@@ -19,12 +19,9 @@ export class UserService {
     return this.http.get(API_URL + 'user', { responseType: 'text' });
   }
 
-  getModeratorBoard(): Observable<any> {
-    return this.http.get(API_URL + 'mod', { responseType: 'text' });
-  }
-
   getAdminBoard(token): Observable<any> {
     return this.http.get(API_URL + 'viewuser', { responseType: 'json', headers: {'x-access-token': token} });
 
   }
+  
 }

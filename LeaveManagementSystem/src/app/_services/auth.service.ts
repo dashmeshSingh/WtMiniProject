@@ -15,11 +15,26 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  getAdminViewleaves(token): Observable<any> {
+    return this.http.get(AUTH_API + 'adminviewleaves', { responseType: 'json', headers: {'x-access-token': token} });
+  }
+
   login(credentials): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
       username: credentials.username,
       password: credentials.password
     }, httpOptions);
+  }
+
+  editstatus(leaveid,leave,roles): Observable<any> {
+    return this.http.put(AUTH_API + 'update/'+leaveid, {
+      username: leave.username,
+      leavetype: leave.leavetype,
+      startdate: leave.startdate,
+      enddate: leave.enddate,
+      status: leave.status,
+      roles: roles
+    }, { responseType: 'json' });
   }
 
   register(user): Observable<any> {
