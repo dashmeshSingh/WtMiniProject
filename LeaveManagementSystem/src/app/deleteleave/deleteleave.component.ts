@@ -13,8 +13,9 @@ export class DeleteleaveComponent implements OnInit {
   form: any = {};
   isSuccessful = false;
   isDeleteleaveFailed = false;
-  constructor(private leaveService:LeaveService,
-    private router:Router) { }
+  constructor(
+    private leaveService: LeaveService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.id = history.state.id;
@@ -28,7 +29,7 @@ export class DeleteleaveComponent implements OnInit {
           this.leaves = data;
           console.log(this.id);
           console.log(data);
-          
+
         },
         error => {
           console.log(error);

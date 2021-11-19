@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const AUTH_API = 'http://localhost:8080/api/auth/';
+const LEAVE_API = 'http://localhost:8080/api/test/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,7 +28,7 @@ export class AuthService {
   }
 
   editstatus(leaveid,leave,roles): Observable<any> {
-    return this.http.put(AUTH_API + 'update/'+leaveid, {
+    return this.http.put(LEAVE_API + 'updatestatus/'+leaveid, {
       username: leave.username,
       leavetype: leave.leavetype,
       startdate: leave.startdate,

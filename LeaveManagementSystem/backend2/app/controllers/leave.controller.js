@@ -97,6 +97,39 @@ exports.updateleave = (req, res) => {
 };
 
 
+exports.updateleaveStatus = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to be updated can not be empty!"
+    });
+  }
+
+  const leaveid = req.params.leaveid;
+
+  Leave.findByIdAndUpdate(leaveid, {
+    username: req.body.username,
+    leavetype: req.body.leavetype,
+    startdate: req.body.startdate,
+    enddate: req.body.enddate,
+    status: req.body.status,
+  
+    roles: req.body.roles,
+  }, { useFindAndModify: false })
+    .then(data => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update leave application with id =${leaveid}.`
+        });
+      } else res.send({ message: "Leave application was updated successfully." });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({
+        message: "Error updating leave application with id=" + err
+      });
+    });
+};
+
 
 exports.leaveapply = (req, res) => {
   const leave = new Leave({

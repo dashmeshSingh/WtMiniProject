@@ -17,4 +17,5 @@ module.exports = function(app) {
   app.get("/api/test/viewall/:username", controller.viewallLeave);
   app.delete("/api/test/delete/:leaveid", controller.deleteLeave);
   app.put("/api/test/update/:leaveid", controller.updateleave);
+  app.put("/api/test/updatestatus/:leaveid", controller.updateleaveStatus);
 };

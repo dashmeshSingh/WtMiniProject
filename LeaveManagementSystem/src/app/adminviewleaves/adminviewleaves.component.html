@@ -51,10 +51,9 @@
                         <td>{{ item.status ? "Approved" : "Pending" }}</td>
 
                         <td>
-                            <button mat-raised-button (click) = "updateStatus(true,item._id)">Approve</button>
-                            <button mat-raised-button (click) = "updateStatus(false,item._id)">Deny</button>
+                            <button mat-raised-button (click) = "retrieveleaves(item._id,true)">Approve</button>
+                            <button mat-raised-button (click) = "retrieveleaves(item._id,false)">Deny</button>
                         </td>
-
 
 
                     </tr>
