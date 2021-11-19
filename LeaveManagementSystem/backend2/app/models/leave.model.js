@@ -8,7 +8,7 @@ var leaveschema = new mongoose.Schema({
   leavetype: String,
   startdate: Date,
   enddate: Date,
-  status: Boolean,
+  status: Number,
 
   roles: [
     {

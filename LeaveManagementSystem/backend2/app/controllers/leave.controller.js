@@ -77,7 +77,7 @@ exports.updateleave = (req, res) => {
     leavetype: req.body.leavetype,
     startdate: req.body.startdate,
     enddate: req.body.enddate,
-    status: false,
+    status: 3,
   
     roles: req.body.roles,
   }, { useFindAndModify: false })
@@ -137,7 +137,7 @@ exports.leaveapply = (req, res) => {
     leavetype: req.body.leavetype,
     startdate: req.body.startdate,
     enddate: req.body.enddate,
-    status: false,
+    status: 3,
   });
 
   leave.save((err, leave) => {

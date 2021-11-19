@@ -43,7 +43,7 @@
             </td>
 
             
-            <td>{{ item.status ? "Approved" : "Pending" }}</td>
+            <td>{{ item.status==3 ? "Pending" :item.status==1? "Approved": "Denied" }}</td>
            
                 <td>
                    <a routerLink= "/updateleaves" [state]= "{id: item._id}"> <button mat-raised-button>Update</button></a> 
