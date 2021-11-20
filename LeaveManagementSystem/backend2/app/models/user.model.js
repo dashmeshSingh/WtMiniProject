@@ -18,7 +18,11 @@ var userschema = new mongoose.Schema({
   ]
 })
 
-userschema.plugin(autoIncrementuser.plugin, 'User');
+userschema.plugin(autoIncrementuser.plugin, {
+  model: 'User',
+  field: '_id',
+  startAt: 201
+});
 
 const User = mongoose.model(
   "User", userschema

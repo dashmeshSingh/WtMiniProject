@@ -18,7 +18,11 @@ var leaveschema = new mongoose.Schema({
   ]
 });
 
-leaveschema.plugin(autoIncrement.plugin, 'Leave');
+leaveschema.plugin(autoIncrement.plugin,{
+  model: 'Leave',
+  field: '_id',
+  startAt: 501
+});
 
 
 const Leave = mongoose.model(
