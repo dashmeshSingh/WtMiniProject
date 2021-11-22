@@ -2,51 +2,125 @@
 
 html,body{
     font-family: 'Numans', sans-serif;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
 }
-.nav-item{
+
+.right{
+  background-color: black;
+}
+
+.top{ 
  font-size: 20px;
  color: rgb(32, 32, 32);
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0,0,0,.5);
+  font-size: 20px;
+}
+
+.bg-dark {
+  background-color: #343a40!important;
+  left: 20px;
+  
+}
+
 .suparna{
     background-color: #E6E6FA;
+    position: center;
 }
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+.bg{
+  width: 100%;
+  left: 40px;
+  background: white;
+} 
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
+/* .btn{
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  top: 15px;
+  color: #E6E6FA;
+  left: 40px;
+  height: 55px;
+  width: 49px;
+  background: black;
+  background-position: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: left 0.4s ease;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.btn.click{
+  left: 260px;
+}
+
+.btn span{
+  color: #E6E6FA;
+  font-size: 28px;
+  line-height: 45px;
+}
+
+.btn.click span:before{
+  content: '/f00d';
+} */
+
+.sidebar{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: 0px;
+  background: black;
+  /* transition: left 0.4s ease; */
+}
+
+/* .sidebar.show{
+  left:0px;
+} */
+
+.sidebar .text{
+  color: #E6E6FA ;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: black;
+  letter-spacing: 1px;
+}
+
+nav ol{
+  background: black;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+
+nav ol li{
+  line-height: 60px;
+}
+
+nav ol li a{
+  color: #E6E6FA;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+nav ol li a:hover{
+  color: rgb(72, 136, 189);
+  background: black;
+  border-left-color: rgb(72, 136, 189);
+}
+
+nav ol ol{
+  position: static;
+}
+
+nav ol ol li{
+  line-height: 46px;
 }

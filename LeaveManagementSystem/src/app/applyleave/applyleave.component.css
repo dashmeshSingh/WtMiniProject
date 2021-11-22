@@ -11,6 +11,7 @@ html,body{
 .card-container.card {
   height: 670px;
   width: 400px;
+  padding-left: 28px;
   align-content: center;
   margin-top: auto;
   margin-bottom: auto;

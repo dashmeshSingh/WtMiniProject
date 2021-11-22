@@ -43,10 +43,23 @@
 
 
         <div class="form-group">
-          <label for="leavetype">Leave Type</label>
+          <!-- <label for="leavetype">Leave Type</label> -->
+          <!-- <form method="post"> -->
+            <!-- <input type="list"  class="form-control" [(ngModel)]="form.leavetype" #leavetype="ngModel"/>
+            <select name="Leave Type">
+              <option value="January">January</option>
+              </select>
+            <!-- <input list="leavetype">
+            <datalist id="leavetype">
+              <option value="Sick Leave">
+              <option value="Firefox">
+              <option value="Chrome">
+              <option value="Opera">
+              <option value="Safari">
+            </datalist> 
+          </form> --> 
 
-          <input type="text" class="form-control" name="leavetype" [(ngModel)]="form.leavetype" required maxlength="40"
-            #leavetype="ngModel" />
+          <input type="text" class="form-control" name="leavetype" [(ngModel)]="form.leavetype" required maxlength="40" #leavetype="ngModel" />
         </div>
 
         <mat-form-field appearance="fill">

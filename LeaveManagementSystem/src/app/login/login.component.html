@@ -17,9 +17,10 @@
 
 	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="login.component.css">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js"> </script>
 </head>
-<body background="https://images.unsplash.com/photo-1475070929565-c985b496cb9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80">
-	
+<body background="https://images.unsplash.com/photo-1475070929565-c985b496cb9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" class="bg">
 
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
@@ -102,6 +103,16 @@
 				<div class="alert alert-success" *ngIf="isLoggedIn">
 					Logged in as {{ roles }}.
 				  </div>
+				  <!-- <nav class="sidebar">
+					  <div class="text"> Side Menu </div>
+					   <ul>
+						   <li><a href="#">Home</a></li>
+						   <li><a href="/applyleave" class="nav-link" routerLink="applyleaves">Apply Leave</a></li>
+						   <li><a href="#">View Leaves</a></li>
+					   </ul>
+
+				  </nav> -->
+
 			</div>
 		</div>
 	</div>
