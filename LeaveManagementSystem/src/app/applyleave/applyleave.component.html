@@ -13,6 +13,7 @@
       <img id="profile-img"
         src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png"
         class="profile-img-card" />
+      <h1 class="application">Leave Application</h1>
       <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
         <div class="form-group">
           <label for="username">Username</label>
@@ -26,7 +27,7 @@
           disabled
           minlength="3"
           maxlength="20"
-         
+          
          
         >
         
@@ -43,7 +44,7 @@
 
 
         <div class="form-group">
-          <!-- <label for="leavetype">Leave Type</label> -->
+          <label for="leavetype">Leave Type</label>
           <!-- <form method="post"> -->
             <!-- <input type="list"  class="form-control" [(ngModel)]="form.leavetype" #leavetype="ngModel"/>
             <select name="Leave Type">
@@ -61,7 +62,7 @@
 
           <input type="text" class="form-control" name="leavetype" [(ngModel)]="form.leavetype" required maxlength="40" #leavetype="ngModel" />
         </div>
-
+        <label for="schedule">Leave Schedule</label>
         <mat-form-field appearance="fill">
           <mat-label>Enter a date range</mat-label>
           <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
