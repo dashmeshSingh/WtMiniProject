@@ -1,12 +1,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div id="app">
   <div class="background bg-dark right">
-  <nav class="navbar navbar-expand navbar-light suparna">
-    <a href="/home" class="navbar-brand">ACCHI Company</a>
+  <nav class="navbar navbar-expand navbar-light suparna topnav">
+    
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <!-- <li class="nav-item">
-        <a href="/home" class="nav-link" routerLink="home">Home </a>
-      </li> -->
+      <li class="nav-item">
+        <a href="/home" class="navbar-light nav-link">ACCHI Company</a>
+      </li>
+     
       <li class="nav-item" *ngIf="showUsers">
         <a href="/viewusers" class="nav-link" routerLink="viewusers">View Users</a>
       </li>
@@ -14,12 +15,12 @@
         <a href="/adminviewleaves" class="nav-link" routerLink="adminviewleaves">View Leaves</a>
       </li>
       
-      <!-- <li class="nav-item" *ngIf="showUserBoard">
+      <li class="nav-item" *ngIf="showUserBoard">
         <a href="/applyleaves" class="nav-link" routerLink="applyleaves">Apply Leave</a>
       </li>
       <li class="nav-item" *ngIf="showUserBoard">
         <a href="/viewleaves" class="nav-link" routerLink="viewleaves">View Leave</a>
-      </li> -->
+      </li>
     </ul>
     
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
@@ -46,7 +47,7 @@
 
     </span>
   </div> -->
-  <nav class="sidebar">
+  <!-- <nav class="sidebar">
     <div class="text"> Side Menu </div>
      <ol>
        <li><a href="/home" class="nav-link" routerLink="home">Home</a></li>
@@ -54,10 +55,13 @@
        <li><a href="/viewleaves" class="nav-link" routerLink="viewleaves">View Leaves</a></li>
      </ol>
 
-  </nav>
+  </nav> -->
 
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
+  <!-- <div class="container">
+    
+  </div> -->
+  
 </div>
+
 </div>
+<router-outlet></router-outlet>

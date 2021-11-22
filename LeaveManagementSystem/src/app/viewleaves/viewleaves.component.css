@@ -1,9 +1,15 @@
+html,body{
+    height: auto;
+    width: auto;
+}
+
 .table .table-hover{
     background-color: #E6E6FA;
     background-size: cover;
     width: 100%;
     height: 100%;
-    left: 80px;
+    /* left: 80px; */
+   
     
 }
 
@@ -13,6 +19,11 @@
 
 .col-md-12{
     max-width: 100%;
-    left: 40px;
-    
+   background-color: black;
+   
+}
+
+
+.row{
+    margin-left: 0px;
 }

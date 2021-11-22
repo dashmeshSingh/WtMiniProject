@@ -1,3 +1,6 @@
 .box{
     background-color: #E6E6FA;
+    float: right;
+    align-items: center;
 }
+
