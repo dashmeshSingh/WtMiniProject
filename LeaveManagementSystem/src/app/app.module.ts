@@ -51,7 +51,8 @@ import { AdminviewleavesComponent } from './adminviewleaves/adminviewleaves.comp
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
 
   ],
   providers: [authInterceptorProviders],
