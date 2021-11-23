@@ -47,12 +47,12 @@ body {
   }
   
   .card__image {
-    height: 160px;
+    height: 169px;
     width: 160px;
-    border-radius: 50%;
-    border: 5px solid #272133;
+    border-radius: 70%;
+    /* border: 5px solid #272133; */
     margin-top: 20px;
-    box-shadow: 0 10px 50px rgb(25, 109, 235);
+    /* box-shadow: 0 10px 50px rgb(25, 109, 235); */
   }
   
   
