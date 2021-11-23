@@ -11,7 +11,7 @@ html,body{
 
 .card-container.card {
   height: 760px;
-  width: 400px;
+  /* width: 400px; */
   align-content: center;
   margin-top: auto;
   margin-bottom: auto;
@@ -20,7 +20,7 @@ html,body{
 .card {
   height: 100px;
   width: 500px;
-  left: 340px;
+  left: 500px;
   top: 2px;
   align-content: center;
   margin-top: auto;
