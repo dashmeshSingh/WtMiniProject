@@ -1,4 +1,4 @@
-<div class="container box" *ngIf="currentUser; else loggedOut">
+<!-- <div class="container box" *ngIf="currentUser; else loggedOut">
   <header class="jumbotron">
     <h3>
       <strong>{{ currentUser.username }}</strong> Profile
@@ -23,4 +23,106 @@
 
 <ng-template #loggedOut>
   Please login.
-</ng-template>
+</ng-template> -->
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/image/download.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile ">
+        <div class="row justify-content-center">
+          
+        </div>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+          <div class="d-flex justify-content-between">
+            <b>Hello, {{currentUser.username}} !!</b>
+          </div>
+        </div>
+        <div class="card-body pt-0 pt-md-4">
+          
+          <div class="text-center">
+          
+            <div class="h5 font-weight-300" *ngFor="let role of currentUser.roles">
+              <i class="ni location_pin mr-2">Name: </i>{{currentUser.firstname}}  {{currentUser.lastname}}
+            </div>
+            <div class="h5 font-weight-300" *ngFor="let role of currentUser.roles">
+              <i class="ni location_pin mr-2">Role: </i>{{ role }}
+            </div>
+            <div class="h5 font-weight-300" *ngFor="let role of currentUser.roles">
+              <i class="ni location_pin mr-2">ID: </i>{{ currentUser.id }}
+            </div>
+            
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <b class="mb-0">My account</b>
+            </div>
+            <div class="col-4 text-right">
+              <a href="/home" class="btn btn-sm btn-primary">Home</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <h2 class="heading-small" style="color: white;">User information</h2>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Username</label>
+                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value={{currentUser.username}}>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email address</label>
+                    <input type="email" id="input-email" class="form-control form-control-alternative" value={{currentUser.email}}>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">First name</label>
+                    <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value={{currentUser.firstname}}>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Last name</label>
+                    <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value={{currentUser.lastname}}>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <h2 class="heading-small" style="color: white;">Contact information</h2>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="mobile">Mobile</label>
+                    <input id="input-address" class="form-control form-control-alternative" placeholder="Mobile" value={{currentUser.mobile}} type="text">
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
