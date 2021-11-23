@@ -8,10 +8,24 @@ html,body{
     background-size: cover;
     width: 100%;
     height: 100%;
-    /* left: 80px; */
-   
+    /* align-content: center; */
+    align-items: center;
+    
+    
     
 }
+
+th {
+    text-align: center;
+}
+
+
+/* .th{
+    align-items: center;
+    justify-items: center;
+    left: 20px;
+    display: flex;
+} */
 
 .container, .container-lg, .container-md, .container-sm {
     max-width: 220px;
