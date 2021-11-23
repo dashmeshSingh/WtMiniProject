@@ -11,16 +11,9 @@ html,body{
     background-size: cover;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    /* align-content: center; */
-    align-items: center;
-    
-    
-=======
     display: inline-table;
     /* left: 80px; */
    
->>>>>>> 580fb82cf2bf70dc3ac055253be90ee018c6b80c
     
 }
 
