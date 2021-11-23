@@ -17,6 +17,18 @@ html,body{
     
 }
 
+th {
+    text-align: center;
+}
+
+
+/* .th{
+    align-items: center;
+    justify-items: center;
+    left: 20px;
+    display: flex;
+} */
+
 .container, .container-lg, .container-md, .container-sm {
     max-width: 220px;
 }
