@@ -1,33 +1,7 @@
-<!-- <div class="container box" *ngIf="currentUser; else loggedOut">
-  <header class="jumbotron">
-    <h3>
-      <strong>{{ currentUser.username }}</strong> Profile
-    </h3>
-  </header>
-  <p>
-    <strong>Token:</strong>
-    {{ currentUser.accessToken.substring(0, 20) }} ...
-    {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}
-  </p>
-  <p>
-    <strong>Email:</strong>
-    {{ currentUser.email }}
-  </p>
-  <strong>Roles:</strong>
-  <ul>
-    <li *ngFor="let role of currentUser.roles">
-      {{ role }}
-    </li>
-  </ul>
-</div>
 
-<ng-template #loggedOut>
-  Please login.
-</ng-template> -->
 <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/image/download.jpg); background-size: cover; background-position: center top;">
-  <!-- Mask -->
+  
   <span class="mask bg-gradient-danger opacity-8"></span>
-  <!-- Header container -->
   
 </div>
 <div class="container-fluid mt--7">
@@ -107,18 +81,7 @@
               </div>
             </div>
             
-            <h2 class="heading-small" style="color: white;">Contact information</h2>
-            <div class="pl-lg-4">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="mobile">Mobile</label>
-                    <input id="input-address" class="form-control form-control-alternative" placeholder="Mobile" value={{currentUser.mobile}} type="text">
-                  </div>
-                </div>
-              </div>
-              
-            </div>
+           
             
           </form>
         </div>
