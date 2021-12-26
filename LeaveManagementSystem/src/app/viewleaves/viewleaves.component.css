@@ -51,17 +51,20 @@ td {
 .button1{
     color: white;
     background-color: green;
-    margin: 4px 7px;
+    /* margin: 4px 7px; */
     text-align: center;
+    vertical-align: middle;
     border-radius: 5px;
-    float: left;
+    float: inline-end;
 }
 
 .button2{
     color: white;
     background-color: red;
     border-radius: 5px;
-    vertical-align: middle;
-    float: right;
+    /* vertical-align: middle; */
+    float: left;
+    /* margin: 4px 7px; */
+
     /* margin: left; */
 }

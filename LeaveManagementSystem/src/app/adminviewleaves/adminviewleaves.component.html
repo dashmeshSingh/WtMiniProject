@@ -11,7 +11,7 @@
         <div class="col-md-12">
 
 
-            <table class="table table-hover">
+            <table class="table table-hover" >
                 <thead>
                     <th>Leave ID
                     </th>
@@ -51,8 +51,8 @@
                         <td>{{ item.status==3 ? "Pending" :item.status==1? "Approved": "Denied" }}</td>
 
                         <td>
-                            <button mat-raised-button (click) = "retrieveleaves(item._id,1)">Approve</button>
-                            <button mat-raised-button (click) = "retrieveleaves(item._id,2)">Deny</button>
+                            <button mat-raised-button (click) = "retrieveleaves(item._id,1)"  class="button button1">Approve</button>
+                            <button mat-raised-button (click) = "retrieveleaves(item._id,2)"  class="button button2">Deny</button>
                         </td>
 
 

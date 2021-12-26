@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'updateleaves', component: UpdateleaveComponent },
   { path: 'deleteleaves', component: DeleteleaveComponent },
   { path: 'adminviewleaves', component: AdminviewleavesComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

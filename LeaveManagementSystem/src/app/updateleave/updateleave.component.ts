@@ -82,24 +82,6 @@ export class UpdateleaveComponent implements OnInit {
         });
   }
 
-  getusername() {
-    return this.currentUser.username;
-  }
-
-
-
-  updateStatus(status): void {
-    const data = {
-      username: this.leaves.username,
-      leavetype: this.leaves.leavetype,
-      startdate: this.leaves.startdate,
-      enddate: this.leaves.endate,
-      status: this.leaves.status,
-      roles: this.leaves.roles
-    };
-
-  }
-
   updateLeave(): void {
     this.leaveService.editleave(this.id, this.form, this.range, this.leaves.roles)
       .subscribe(
